@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+
+body {
+   color: #383e45; /** メイン要素全体の文字色を変える **/
+   font-size: 0.9rem; /** メイン要素全体の文字サイズを変える **/
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%; /** 画面サイズに画像を合わせる、可変させる **/
+}
+
+li {
+    list-style: none;
+}
+
+.site-title {
+    width: 120px;
+    line-height: 1px;
+    padding: 10px 0;
+}
+
+.site-title a {
+    display: block;
+}
+
+.section-title {
+    display: inline-block;
+    font-size: 2rem;
+    margin-bottom: 60px;
+    border-bottom: solid 1px  #383e45; /* 下線を引いて色を指定する */
+    /* border-radius: 70px;
+    background-color: blueviolet; 背景を作って角を丸めたりする　radius=角をどうするか */ 
+}
+
+.content-title {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto 100px;
+    padding: 0 4%;
+    text-align: center; /* 中央にコンテンツを表示させる、startなら左寄せ、endなら右寄せになる */
+}
+
+/* ヘッダー */
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#header ul {
+    display: flex;
+    padding: 10px 0;
+}
+
+#header li {
+    margin-left: 30px;
+}
+
+#header li a {
+    color: #24292e;
+}
+
+#header li a:hover {
+    opacity: 0.7; /*カーソル充てると透明度を下げる */
+}
+
+/* メイン */
+
+#mainvisual {
+    margin-bottom: 80px;
+}
+
+#mainvisual img {
+    width: 100%;
+    max-width: 1920px;
+    height: 600px;
+    object-fit: cover;
+}
+
+#about .content {
+    display: flex; /* imgとdivを横並びにする */
+    justify-content: center;
+    align-items: center;
+}
+
+#about img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* 0%=正方形、50%=円 */
+    margin-right: 30px;
+}
+
+#about .text {
+    text-align: left;
+}
+
+#Bicycle ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#Bicycle li {
+    width: 32%;
+}
+
+#footer {
+    font-size: 0.5rem;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* -----------ここからレスポンシブ用CSS---------------- */
+
+@media screen and (max-width: 600px) {
+    
+    #mainvisual img {
+        height: calc(100vh - 60px); /* calc=calclation/計算しますよ！の表明。100vh(画面いっぱいの高さから60px引いた高さ) */
+    }
+
+    #about .content {
+        flex-direction: column; /* display: flex;で横になったものを縦並びにする */
+    }
+
+    #about img {
+        margin-right: 0;
+    }
+
+    #Bicycle ul {
+        flex-direction: column;
+    }
+
+    #Bicycle li {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+}
